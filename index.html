@@ -9,29 +9,15 @@
 <body>
   <a href="http://line.naver.jp/R/msg/text/?LINE%20it%21%0d%0ahttp%3a%2f%2fline%2enaver%2ejp%2f">123</a>
 
-  <div class="fb-customerchat"
-    page_id=""
-    minimized="true"  >
-  </div>
+  <a href="fb-messenger://share/?link= https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fsharing%2Freference%2Fsend-dialog&app_id=300324774156134">Send In Messenger</a>
 
-  <!-- fb api-->
+  <button onclick="fb_share">fb_share</button>
   <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId            : '',
-        autoLogAppEvents : true,
-        xfbml            : true,
-        version          : 'v3.0'
-      });
-    };
-  
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "https://connect.facebook.net/zh_CN/sdk/xfbml.customerchat.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
+    function fb_share() {
+      console.log('fb')
+      window.open('fb-messenger://share?link=' + encodeURIComponent(link) + '&app_id=' + encodeURIComponent(app_id));
+    }
   </script>
+
 </body>
 </html>
